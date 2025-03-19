@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.harsh.arbeitewunder.R
 import com.harsh.arbeitewunder.ViewModel.MainViewModel
 import com.harsh.arbeitewunder.adapter.CategoryAdapter
+import com.harsh.arbeitewunder.adapter.JobAdapter
 import com.harsh.arbeitewunder.databinding.ActivityMainBinding
 
 class MainActivity: AppCompatActivity() {
@@ -27,6 +28,15 @@ class MainActivity: AppCompatActivity() {
 
         initLocation()
         initCategory()
+        initSuggest()
+    }
+
+    private fun initSuggest() {
+        binding.progressBarSuggest.visibility=View.VISIBLE
+        binding.recyclerViewSuggest.layoutManager=LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
+        binding.recyclerViewSuggest.adapter=JobAdapter(mainViewModel.loadData())
+        binding.progressBarSuggest.visibility=View.GONE
+
     }
 
     private fun initCategory() {
