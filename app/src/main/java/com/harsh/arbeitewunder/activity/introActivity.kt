@@ -14,8 +14,7 @@ class introActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.goBtn.setOnClickListener {
-            val intent= Intent(this, MainActivity::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, MainActivity::class.java))
         }
 
         window.setFlags(
