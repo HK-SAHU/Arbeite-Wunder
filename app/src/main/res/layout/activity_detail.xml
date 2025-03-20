@@ -26,9 +26,12 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:id="@+id/imageView6"
+                    android:id="@+id/backBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/back" />
 
                 <ImageView
@@ -68,7 +71,7 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <TextView
-                        android:id="@+id/textView9"
+                        android:id="@+id/titleTxt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
@@ -81,7 +84,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView11"
+                        android:id="@+id/companyTxt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
@@ -107,7 +110,7 @@
                             app:tint="@color/purple" />
 
                         <TextView
-                            android:id="@+id/textView12"
+                            android:id="@+id/locationTxt"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
@@ -131,7 +134,7 @@
                             android:background="@drawable/grey_bg">
 
                             <ImageView
-                                android:id="@+id/imageView13"
+                                android:id="@+id/imageView131"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:layout_margin="8dp"
@@ -142,25 +145,25 @@
                                 app:srcCompat="@drawable/salary" />
 
                             <TextView
-                                android:id="@+id/textView13"
+                                android:id="@+id/textView111"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="8dp"
                                 android:text="Salary(LPA)"
                                 android:textColor="@color/black"
                                 android:textStyle="bold"
-                                app:layout_constraintStart_toEndOf="@+id/imageView13"
-                                app:layout_constraintTop_toTopOf="@+id/imageView13" />
+                                app:layout_constraintStart_toEndOf="@+id/imageView131"
+                                app:layout_constraintTop_toTopOf="@+id/imageView131" />
 
                             <TextView
-                                android:id="@+id/textView14"
+                                android:id="@+id/salaryTxt"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="₹0"
                                 android:textColor="@color/purple"
                                 android:textStyle="bold"
-                                app:layout_constraintBottom_toBottomOf="@+id/imageView13"
-                                app:layout_constraintStart_toStartOf="@+id/textView13" />
+                                app:layout_constraintBottom_toBottomOf="@+id/imageView131"
+                                app:layout_constraintStart_toStartOf="@+id/textView111" />
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <androidx.constraintlayout.widget.ConstraintLayout
@@ -172,7 +175,7 @@
                             android:background="@drawable/grey_bg">
 
                             <ImageView
-                                android:id="@+id/imageView13"
+                                android:id="@+id/imageView132"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:layout_margin="8dp"
@@ -183,25 +186,25 @@
                                 app:srcCompat="@drawable/job_type" />
 
                             <TextView
-                                android:id="@+id/textView13"
+                                android:id="@+id/textView112"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="8dp"
                                 android:text="Job Type"
                                 android:textColor="@color/black"
                                 android:textStyle="bold"
-                                app:layout_constraintStart_toEndOf="@+id/imageView13"
-                                app:layout_constraintTop_toTopOf="@+id/imageView13" />
+                                app:layout_constraintStart_toEndOf="@+id/imageView132"
+                                app:layout_constraintTop_toTopOf="@+id/imageView132" />
 
                             <TextView
-                                android:id="@+id/textView14"
+                                android:id="@+id/jobTypeTxt"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="₹0"
                                 android:textColor="@color/purple"
                                 android:textStyle="bold"
-                                app:layout_constraintBottom_toBottomOf="@+id/imageView13"
-                                app:layout_constraintStart_toStartOf="@+id/textView13" />
+                                app:layout_constraintBottom_toBottomOf="@+id/imageView132"
+                                app:layout_constraintStart_toStartOf="@+id/textView112" />
                         </androidx.constraintlayout.widget.ConstraintLayout>
                     </LinearLayout>
 
@@ -220,7 +223,7 @@
                             android:background="@drawable/grey_bg">
 
                             <ImageView
-                                android:id="@+id/imageView13"
+                                android:id="@+id/imageView133"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:layout_margin="8dp"
@@ -231,25 +234,25 @@
                                 app:srcCompat="@drawable/working_model" />
 
                             <TextView
-                                android:id="@+id/textView13"
+                                android:id="@+id/textView113"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="8dp"
                                 android:text="Working Model"
                                 android:textColor="@color/black"
                                 android:textStyle="bold"
-                                app:layout_constraintStart_toEndOf="@+id/imageView13"
-                                app:layout_constraintTop_toTopOf="@+id/imageView13" />
+                                app:layout_constraintStart_toEndOf="@+id/imageView133"
+                                app:layout_constraintTop_toTopOf="@+id/imageView133" />
 
                             <TextView
-                                android:id="@+id/textView14"
+                                android:id="@+id/workingModelTxt"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="₹0"
                                 android:textColor="@color/purple"
                                 android:textStyle="bold"
-                                app:layout_constraintBottom_toBottomOf="@+id/imageView13"
-                                app:layout_constraintStart_toStartOf="@+id/textView13" />
+                                app:layout_constraintBottom_toBottomOf="@+id/imageView133"
+                                app:layout_constraintStart_toStartOf="@+id/textView113" />
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                         <androidx.constraintlayout.widget.ConstraintLayout
@@ -283,7 +286,7 @@
                                 app:layout_constraintTop_toTopOf="@+id/imageView13" />
 
                             <TextView
-                                android:id="@+id/textView14"
+                                android:id="@+id/levelTxt"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="₹0"
@@ -307,6 +310,7 @@
                             android:orientation="vertical">
 
                             <com.google.android.material.tabs.TabLayout
+                                android:id="@+id/tabLayout"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 app:tabBackground="@color/white"
@@ -334,9 +338,11 @@
                     </LinearLayout>
 
                     <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/button"
+                        android:id="@+id/applyJobBtn"
                         style="@android:style/Widget.Button"
                         android:layout_margin="24dp"
+                        android:background="@drawable/purple_full_corner"
+                        android:textColor="@color/white"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:text="Apply For Job"
@@ -346,7 +352,7 @@
                 </LinearLayout>
 
                 <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/imageView11"
+                    android:id="@+id/picDetail"
                     android:layout_width="93dp"
                     android:layout_height="93dp"
                     app:shapeAppearance="@style/circleImageView"
