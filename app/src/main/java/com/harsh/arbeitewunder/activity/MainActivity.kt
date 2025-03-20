@@ -7,6 +7,7 @@ import android.widget.ArrayAdapter
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.harsh.arbeitewunder.Model.JobModel
 import com.harsh.arbeitewunder.R
 import com.harsh.arbeitewunder.ViewModel.MainViewModel
 import com.harsh.arbeitewunder.adapter.CategoryAdapter
@@ -29,6 +30,20 @@ class MainActivity: AppCompatActivity() {
         initLocation()
         initCategory()
         initSuggest()
+        initRecent("0")
+    }
+
+    private fun initRecent(cat:String) {
+        var data: List<JobModel>
+        if(cat=="0"){
+            data= mainViewModel.loadData().sortedBy { it.category }
+        }
+        else{
+            data=mainViewModel.loadData().filter { it.category==cat }
+        }
+
+        binding.recyclerViewRecent.layoutManager= LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        binding.recyclerViewRecent.adapter=JobAdapter(data)
     }
 
     private fun initSuggest() {
@@ -45,7 +60,7 @@ class MainActivity: AppCompatActivity() {
         binding.recyclerViewCategory.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         binding.recyclerViewCategory.adapter = CategoryAdapter(mainViewModel.loadCategory(), object : CategoryAdapter.ClickListener{
             override fun onClick(category: String) {
-
+                initRecent(category)
             }
 
         })
