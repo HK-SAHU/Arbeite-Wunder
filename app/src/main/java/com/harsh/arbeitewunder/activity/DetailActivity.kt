@@ -6,7 +6,13 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentPagerAdapter
 import com.bumptech.glide.Glide
+import com.harsh.arbeitewunder.Fragment.AboutFragment
+import com.harsh.arbeitewunder.Fragment.CompanyFragment
+import com.harsh.arbeitewunder.Fragment.ReviewFragment
 import com.harsh.arbeitewunder.Model.JobModel
 import com.harsh.arbeitewunder.R
 import com.harsh.arbeitewunder.databinding.ActivityDetailBinding
@@ -28,6 +34,7 @@ class DetailActivity : AppCompatActivity() {
         )
 
         getBundle()
+        setupViewPager()
     }
 
     private fun getBundle() {
@@ -50,5 +57,45 @@ class DetailActivity : AppCompatActivity() {
         binding.backBtn.setOnClickListener{
             finish()
         }
+    }
+
+    private fun setupViewPager() {
+        val adapter = ViewPagerAdapter(supportFragmentManager)
+        val tab1= AboutFragment()
+        val tab2= CompanyFragment()
+        val tab3= ReviewFragment()
+
+        val bundle1= Bundle()
+        bundle1.putString("description",item.description)
+        bundle1.putString("about",item.about)
+
+        tab1.arguments=bundle1
+        tab2.arguments= Bundle()
+        tab3.arguments= Bundle()
+
+        adapter.addFrag(tab1,"About")
+        adapter.addFrag(tab2,"Company")
+        adapter.addFrag(tab3,"Reviews")
+
+        binding.viewpager.adapter=adapter
+        binding.tabLayout.setupWithViewPager(binding.viewpager)
+
+    }
+
+
+    private class ViewPagerAdapter(fm:FragmentManager):FragmentPagerAdapter(fm){
+        private val fragmentList= arrayListOf<Fragment>()
+        private val fragmentTitlelist = arrayListOf<String>()
+
+        override fun getCount():Int = fragmentList.size
+
+        override fun getItem(position : Int): Fragment = fragmentList[position]
+
+        fun addFrag(fragment: Fragment, title:String){
+            fragmentList.add(fragment)
+            fragmentTitlelist.add(title)
+        }
+
+        override fun getPageTitle(position: Int): CharSequence = fragmentTitlelist[position]
     }
 }
